@@ -1,0 +1,229 @@
+@layout('layout/layout')
+
+@yield('content')
+  	 @set('title', 'article details')
+	   <main id="tg-main" class="tg-main tg-haslayout">
+			<!--************************************
+					About Us Start
+			*************************************-->
+			<div class="container">
+				<div class="row">
+					<div id="tg-twocolumns" class="tg-twocolumns">
+						<div class="col-xs-12 col-sm-7 col-md-8 col-lg-9 pull-right">
+							<div id="tg-content" class="tg-content">
+								<div class="tg-sectionhead">
+									<div class="tg-title">
+										<h2>News Articles List</h2>
+									</div>
+									<div class="tg-description">
+										<p>Stay Updated With News</p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="tg-posts tg-postslist">
+                                        @each(article in articles)
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 item">
+                                                <div class="tg-post">
+                                                    <figure>
+                                                        <span class="tg-themetag tg-bookmarktag"><i class="icon-bookmark"></i></span>
+                                                        <a href="article/{{article._id}}/details"><img src="images/post/img-13.jpg" alt="image description"></a>
+                                                    </figure>
+                                                    <div class="tg-postcontent">
+                                                        <ul class="tg-postcategories">
+                                                            <li><a href="javascript:void(0);">{{article.category.category.name}}</a></li>
+														<li><a href="">{{article.category.name}}</a></li>
+                                                        </ul>
+                                                        <div class="tg-posttitle">
+                                                        <h3><a href="article/{{article._id}}/details">{{article.title}}</a></h3>
+                                                        </div>
+                                                        <ul class="tg-postmetadata">
+                                                            <li>By: <a href="javascript:void(0);">Terisa Wallick</a></li>
+                                                            <li><i class="icon-bubble"></i><a href="javascript:void(0);">15642</a></li>
+                                                        </ul>
+                                                        <div class="tg-description">
+                                                            <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore re lokate magna aliqua enim ad minim veniam, quis nostrud exercitation risk nisiutia commodo consequat aute irure dolor... <a href="javascript:void(0);">read more</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endeach
+										
+										
+									</div>
+									<button id="more" class="btn btn-primary">More Item</button>
+								</div>
+								
+							
+							
+							
+						</div>
+						<div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
+							<aside id="tg-sidebar" class="tg-sidebar">
+								
+								<div class="tg-widget tg-widgettrendingposts">
+                                <div class="tg-sidebartitle">
+                                 @each(cat in category)
+                                    <h2>
+                                      {{cat.name}}
+                                   </h2> 
+                                   @endeach
+                              </div>
+									<div class="tg-widgetcontent">
+										<ul>
+                                            @each(subCategory in subCategories)
+                                            <li>
+                                                    <a href="/{{subCategory.category.slug.toLowerCase()}}/{{subCategory.slug.toLowerCase()}}">
+                                                      <span>{{subCategory.name}}</span>
+                                                        
+                                                    </a>
+                                            </li>
+                                            @endeach
+											
+										
+										</ul>
+									</div>
+								</div>
+								<div class="tg-widget tg-widgettrendingposts">
+									<div class="tg-sidebartitle"><h2>By Posts Type</h2></div>
+									<div class="tg-widgetcontent">
+										<ul>
+											<li>
+												<a href="javascript:void(0);">
+													<span>Featured Posts</span>
+													<span>987327</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);">
+													<span>Regular Posts</span>
+													<span>48952413</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="tg-widget tg-widgettrendingposts">
+									<div class="tg-sidebartitle"><h2>Trending Posts</h2></div>
+									<div class="tg-widgetcontent">
+										<div id="tg-trendingpostsslider" class="tg-trendingpostsslider owl-carousel">
+											<div class="tg-post">
+												<figure>
+													<a href="javascript:void(0);"><img src="images/post/img-04.jpg" alt="image description"></a>
+												</figure>
+												<div class="tg-postcontent">
+													<ul class="tg-postcategories">
+														<li><a href="javascript:void(0);">Lifestyle</a></li>
+														<li><a href="javascript:void(0);">Entertainment</a></li>
+													</ul>
+													<div class="tg-posttitle">
+														<h3><a href="javascript:void(0);">Top 10 Characters in 2017</a></h3>
+													</div>
+													<ul class="tg-postmetadata">
+														<li>By: <a href="javascript:void(0);">Terisa Wallick</a></li>
+														<li><i class="icon-bubble"></i><a href="javascript:void(0);">15642</a></li>
+													</ul>
+												</div>
+											</div>
+											<div class="tg-post">
+												<figure>
+													<a href="javascript:void(0);"><img src="images/post/img-05.jpg" alt="image description"></a>
+												</figure>
+												<div class="tg-postcontent">
+													<ul class="tg-postcategories">
+														<li><a href="javascript:void(0);">Lifestyle</a></li>
+														<li><a href="javascript:void(0);">Entertainment</a></li>
+													</ul>
+													<div class="tg-posttitle">
+														<h3><a href="javascript:void(0);">Top 10 Characters in 2017</a></h3>
+													</div>
+													<ul class="tg-postmetadata">
+														<li>By: <a href="javascript:void(0);">Terisa Wallick</a></li>
+														<li><i class="icon-bubble"></i><a href="javascript:void(0);">15642</a></li>
+													</ul>
+												</div>
+											</div>
+											<div class="tg-post">
+												<figure>
+													<a href="javascript:void(0);"><img src="images/post/img-06.jpg" alt="image description"></a>
+												</figure>
+												<div class="tg-postcontent">
+													<ul class="tg-postcategories">
+														<li><a href="javascript:void(0);">Lifestyle</a></li>
+														<li><a href="javascript:void(0);">Entertainment</a></li>
+													</ul>
+													<div class="tg-posttitle">
+														<h3><a href="javascript:void(0);">Top 10 Characters in 2017</a></h3>
+													</div>
+													<ul class="tg-postmetadata">
+														<li>By: <a href="javascript:void(0);">Terisa Wallick</a></li>
+														<li><i class="icon-bubble"></i><a href="javascript:void(0);">15642</a></li>
+													</ul>
+												</div>
+											</div>
+											<div class="tg-post">
+												<figure>
+													<a href="javascript:void(0);"><img src="images/post/img-07.jpg" alt="image description"></a>
+												</figure>
+												<div class="tg-postcontent">
+													<ul class="tg-postcategories">
+														<li><a href="javascript:void(0);">Lifestyle</a></li>
+														<li><a href="javascript:void(0);">Entertainment</a></li>
+													</ul>
+													<div class="tg-posttitle">
+														<h3><a href="javascript:void(0);">Top 10 Characters in 2017</a></h3>
+													</div>
+													<ul class="tg-postmetadata">
+														<li>By: <a href="javascript:void(0);">Terisa Wallick</a></li>
+														<li><i class="icon-bubble"></i><a href="javascript:void(0);">15642</a></li>
+													</ul>
+												</div>
+											</div>
+											<div class="tg-post">
+												<figure>
+													<a href="javascript:void(0);"><img src="images/post/img-08.jpg" alt="image description"></a>
+												</figure>
+												<div class="tg-postcontent">
+													<ul class="tg-postcategories">
+														<li><a href="javascript:void(0);">Lifestyle</a></li>
+														<li><a href="javascript:void(0);">Entertainment</a></li>
+													</ul>
+													<div class="tg-posttitle">
+														<h3><a href="javascript:void(0);">Top 10 Characters in 2017</a></h3>
+													</div>
+													<ul class="tg-postmetadata">
+														<li>By: <a href="javascript:void(0);">Terisa Wallick</a></li>
+														<li><i class="icon-bubble"></i><a href="javascript:void(0);">15642</a></li>
+													</ul>
+												</div>
+											</div>
+											<div class="tg-post">
+												<figure>
+													<a href="javascript:void(0);"><img src="images/post/img-09.jpg" alt="image description"></a>
+												</figure>
+												<div class="tg-postcontent">
+													<ul class="tg-postcategories">
+														<li><a href="javascript:void(0);">Lifestyle</a></li>
+														<li><a href="javascript:void(0);">Entertainment</a></li>
+													</ul>
+													<div class="tg-posttitle">
+														<h3><a href="javascript:void(0);">Top 10 Characters in 2017</a></h3>
+													</div>
+													<ul class="tg-postmetadata">
+														<li>By: <a href="javascript:void(0);">Terisa Wallick</a></li>
+														<li><i class="icon-bubble"></i><a href="javascript:void(0);">15642</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</aside>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--************************************
+					About Us End
+			*************************************-->
+		</main>
+@endyield

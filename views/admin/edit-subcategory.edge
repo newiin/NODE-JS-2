@@ -1,0 +1,41 @@
+@layout('layout/adminLayout')
+@yield('content')
+	 @set('title', 'Admin Area')
+
+	           <div class="panel panel-default">
+                   <div class="panel panel-body">
+                       <div class="container">
+                            @if(errors.length>0)
+                            @each(error in errors)
+
+                                 <div class="alert alert-danger">
+                                    {{error.msg }}
+                                 </div>
+                               @endeach
+                          @endif
+                                <form class="tg-formtheme tg-formmakeanoffer"  action="/admin/auth/subcategory/{{subcategory._id}}/edit/?_method=PUT"  method="post">
+                                    <fieldset>
+                                        
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" value="{{subcategory.category.name}}" disabled>
+                                        </div>
+                                        <div class="form-group ">
+                                             
+                                             <input type="text" value="{{subcategory.name}}" name="subcategory" class="form-control" placeholder="Add subcategory*">
+                                        </div>
+                                       
+                                        <div class="form-group">
+                                            <button class="tg-btn" type="submit">Register a new Subcategory</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                       </div>
+                    
+                   </div>
+               </div>
+				
+			</div>
+		
+
+		
+@endyield

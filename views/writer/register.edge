@@ -1,0 +1,93 @@
+@layout('layout/layout')
+
+@yield('content')
+<main id="tg-main" class="tg-main tg-haslayout">
+			<div class="container">
+				<div class="row">
+					<div id="tg-content" class="tg-content">
+						<div class="tg-loginsignup">
+							
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								
+								<div class="tg-title">
+									<h2>Register Now</h2>
+								</div>
+                   @if(errorMessage.length>0)
+                          <div class="alert alert-danger">
+                            {{errorMessage}}
+                          </div>
+                      
+										@endif
+										@if(errors.length>0)
+										  @each(error in errors)
+
+                            <div class="alert alert-danger">
+                              {{error.msg }}
+                            </div>
+                       @endeach
+										@endif
+								<div class="tg-haslayout">
+									<div class="row">
+										<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+										
+											<form class="tg-formtheme tg-formregister" action="/writer/auth/register" method="post">
+											<input type="hidden" name="_csrf" value="">
+												<fieldset>
+												   <div class="form-group tg-inputwithicon">
+														<i class="icon-envelope"></i>
+														<input type="text" name="name" class="form-control" value="" placeholder="name*">
+													</div>
+													<div class="form-group tg-inputwithicon">
+														<i class="icon-envelope"></i>
+														<input type="text" name="email" class="form-control" value="" placeholder="Email*">
+													</div>
+													<div class="form-group tg-inputwithicon">
+														<i class="icon-lock"></i>
+														<input type="password" name="password" class="form-control" placeholder="Password*">
+													</div>
+													<div class="form-group tg-inputwithicon">
+														<i class="icon-lock"></i>
+														<input type="password" name="confirm" class="form-control" placeholder="Retype Password*">
+													</div>
+													
+													<button class="tg-btn" type="submit">Register</button>
+												</fieldset>
+											</form>
+										</div>
+										<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+											<ul class="tg-sociallogingsignup">
+												<li class="tg-googleplus">
+													<a href="javascript:void(0);">
+														<i class="fa fa-google-plus"></i>
+														<span>Sign in with <strong>Google</strong></span>
+													</a>
+												</li>
+												<li class="tg-facebook">
+													<a href="javascript:void(0);">
+														<i class="fa fa-facebook"></i>
+														<span>Sign in with <strong>Facebook</strong></span>
+													</a>
+												</li>
+												<li class="tg-linkedin">
+													<a href="javascript:void(0);">
+														<i class="fa fa-linkedin"></i>
+														<span>Sign in with <strong>Linkedin</strong></span>
+													</a>
+												</li>
+												<li class="tg-twitter">
+													<a href="javascript:void(0);">
+														<i class="fa fa-twitter"></i>
+														<span>Sign in with <strong>Twitter</strong></span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+@endyield

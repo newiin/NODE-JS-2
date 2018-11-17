@@ -1,0 +1,19 @@
+@layout('layout/layout')
+
+@yield('content')
+  	 @set('title', 'article')
+	
+
+        @each(article in articles)
+       
+         <div class="escape">     
+                    {{{article.body}}}    
+         </div> 
+        
+         <a href="{{article.link}}">link</a>
+       
+        @endeach
+		
+
+	  
+@endyield

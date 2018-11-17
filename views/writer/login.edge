@@ -1,0 +1,80 @@
+@layout('layout/layout')
+
+@yield('content')
+<main id="tg-main" class="tg-main tg-haslayout">
+			<div class="container">
+				<div class="row">
+					<div id="tg-content" class="tg-content">
+						<div class="tg-loginsignup">
+							<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+								<div class="tg-logingarea">
+									<h2>Login Now</h2>
+									
+	
+										 @if(error)
+										 @each(err in error)
+										   <div class="alert alert-danger">
+										  {{err}}
+										  </div>
+										 @endeach
+										 
+										   
+										 @endif
+									<form class="tg-formtheme tg-formloging" action="/writer/auth/login" method="post">
+										<fieldset>
+											<div class="form-group">
+												<input type="email" name="email" class="form-control" placeholder="email">
+											</div>
+											<div class="form-group">
+												<input type="password" name="password" class="form-control" placeholder="Password">
+											</div>
+											<div class="form-group">
+												<div class="tg-checkbox">
+													<input id="tg-rememberme" type="checkbox" name="rememberme" value="rememberme">
+													<label for="tg-rememberme">Keep me logged in</label>
+												</div>
+												<a class="tg-forgetpassword" href="">Forgot Password?</a>
+											</div>
+											<button class="tg-btn" type="submit">Login</button>
+										</fieldset>
+									</form>
+								</div>
+								
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+								<ul class="tg-sociallogingsignup">
+									<li class="tg-googleplus">
+										<a href="javascript:void(0);">
+											<i class="fa fa-google-plus"></i>
+											<span>Sign in with <strong>“Google”</strong></span>
+										</a>
+									</li>
+									<li class="tg-facebook">
+										<a href="javascript:void(0);">
+											<i class="fa fa-facebook"></i>
+											<span>Sign in with <strong>“Google”</strong></span>
+										</a>
+									</li>
+									<li class="tg-linkedin">
+										<a href="javascript:void(0);">
+											<i class="fa fa-linkedin"></i>
+											<span>Sign in with <strong>“Google”</strong></span>
+										</a>
+									</li>
+									<li class="tg-twitter">
+										<a href="javascript:void(0);">
+											<i class="fa fa-twitter"></i>
+											<span>Sign in with <strong>“Google”</strong></span>
+										</a>
+									</li>
+								</ul>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+@endyield
+
