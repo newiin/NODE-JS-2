@@ -4,8 +4,8 @@ const User = require('../models/User');
 
 passport.use(new GoogleStrategy({
         // google start options
-        clientID: '546392084639-9tbbiqjirf5sf99tl0n10b41j9p0uv0i.apps.googleusercontent.com',
-        clientSecret: '4fI7qTR4dz5ftzBvSPmg9qmm',
+        clientID: '5462552121212392084639-9tbbiqjirf5zvbnvnmbm,sf99tl0n10b41j9p0uv0i.apps.googleusercontent.com',
+        clientSecret: '4fI7qTR4dz5ccncncftzBvSPmg9qmm',
         callbackURL: "/google/auth/redirect"
     },
     function (accessToken, refreshToken, profile, done) {
